@@ -21,3 +21,7 @@ The main components of the project are:
 The project uses Quarkus for dependency injection and configuration. The URL of the PurgoMalum service is configured in the `application.properties` file.
 
 This project demonstrates how to build a reactive application with MicroProfile and Quarkus, and how to integrate with an external REST service. It also shows how to use Lombok to simplify the creation of data classes in Java.
+
+
+## Validation Process
+The validation sends the incoming message to the PurgoMalum API and checks if the response contains any profanity. If the response contains profanity, the api returns a text where the profanity is replaced with asterisks. Then sends the message with id, new text and `isValid=true` to the `text-validation-response` topic. 
